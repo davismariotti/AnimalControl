@@ -10,6 +10,7 @@ public class AnimalControl extends JavaPlugin{
     private final HashMap<UUID, EntityData> data = new HashMap<UUID, EntityData>();
 
     public void onEnable() {
+        getServer().getPluginManager().registerEvents(new ControlListener(this), this);
         saveDefaultConfig();
         startTask();
     }
